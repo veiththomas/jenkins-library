@@ -108,6 +108,7 @@ private void loadCertificates(Map config) {
         '-import',
         '-noprompt',
         '-storepass changeit',
+        '-trustcacerts',
         "-keystore ${certificateFolder}cacerts"
     ]
     if (config.customTlsCertificateLinks){
