@@ -75,7 +75,7 @@ void call(Map parameters = [:]) {
                     }
                 }
             } finally {
-                def ignore = sh script: 'rm -rf .sonar-scanner .certificates', returnStatus: true
+                def ignore = sh script: 'echo "huhu"', returnStatus: true
             }
         }
     }
