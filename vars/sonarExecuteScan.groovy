@@ -124,5 +124,6 @@ private void loadCertificates(Map config) {
             sh "wget ${wgetOptions.join(' ')} ${url}"
             sh "keytool ${keytoolOptions.join(' ')} -alias '${filename}' -file '${certificateFolder}${filename}'"
         }
+        sh "chmod 666 -R ${certificateFolder}"
     }
 }
