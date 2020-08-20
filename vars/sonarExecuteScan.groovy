@@ -108,7 +108,6 @@ private void loadCertificates(Map config) {
         '-import',
         '-noprompt',
         '-storepass changeit',
-        '-trustcacerts',
         "-keystore ${certificateFolder}cacerts"
     ]
     if (config.customTlsCertificateLinks){
@@ -124,6 +123,5 @@ private void loadCertificates(Map config) {
             sh "wget ${wgetOptions.join(' ')} ${url}"
             sh "keytool ${keytoolOptions.join(' ')} -alias '${filename}' -file '${certificateFolder}${filename}'"
         }
-        sh "chmod 777 -R ${certificateFolder}"
     }
 }
